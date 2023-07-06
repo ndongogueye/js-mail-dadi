@@ -14,7 +14,7 @@ if (emailAutorizzate.includes(emailInserita)) {
 
 function generaNumeroCasuale() {
 
-  let numeroCasuale = Math.floor(Math.random() * 100) + 1;
+  let numeroCasuale = Math.floor(Math.random() * 6) + 1;
 
   
   let pc = document.getElementById("numeroCasualePc");
