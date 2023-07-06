@@ -12,22 +12,18 @@ if (emailAutorizzate.includes(emailInserita)) {
 
 
 
-function generaNumeroCasuale() {
+function gioca() {
+  var giocatore = Math.floor(Math.random() * 6) + 1;
+  var computer = Math.floor(Math.random() * 6) + 1;
 
-  let numeroCasualeUtente = Math.floor(Math.random() * 6) + 1;
-  let numeroCasualePc = Math.floor(Math.random() * 6) + 1;
+  console.log("Il giocatore ha lanciato il dado e ha ottenuto: " + giocatore);
+  console.log("Il computer ha lanciato il dado e ha ottenuto: " + computer);
 
-  
-  let pc = document.getElementById("numeroCasualePc");
-  let utente = document.getElementById("numeroCasualeUTente");
-  
-  if (pc>utente) {
-    console.log('pc hai vinto')
-  } else ( pc<utente) {
-    console.log('utente hai vinto')
+  if (giocatore > computer) {
+    console.log("Il giocatore vince!");
+  } else if (computer > giocatore) {
+    console.log("Il computer vince!");
+  } else {
+    console.log("È un pareggio!");
   }
-
-
-  pc.textContent = numeroCasualePc;
-  utente.textContent = numeroCasualeUtente
 }
