@@ -14,13 +14,20 @@ if (emailAutorizzate.includes(emailInserita)) {
 
 function generaNumeroCasuale() {
 
-  let numeroCasuale = Math.floor(Math.random() * 6) + 1;
+  let numeroCasualeUtente = Math.floor(Math.random() * 6) + 1;
+  let numeroCasualePc = Math.floor(Math.random() * 6) + 1;
 
   
   let pc = document.getElementById("numeroCasualePc");
-  let utente = document.getElementById("numeroCasualeUTente"); 
+  let utente = document.getElementById("numeroCasualeUTente");
+  
+  if (pc>utente) {
+    console.log('pc hai vinto')
+  } else ( pc<utente) {
+    console.log('utente hai vinto')
+  }
 
 
-  pc.textContent = numeroCasuale;
-  utente.textContent = numeroCasuale
+  pc.textContent = numeroCasualePc;
+  utente.textContent = numeroCasualeUtente
 }
