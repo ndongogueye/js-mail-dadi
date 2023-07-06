@@ -9,3 +9,18 @@ if (emailAutorizzate.includes(emailInserita)) {
 } else {
   console.log("Spiacenti, non hai accesso autorizzato.");
 }
+
+
+
+function generaNumeroCasuale() {
+
+  let numeroCasuale = Math.floor(Math.random() * 100) + 1;
+
+  
+  let pc = document.getElementById("numeroCasualePc");
+  let utente = document.getElementById("numeroCasualeUTente"); 
+
+
+  pc.textContent = numeroCasuale;
+  utente.textContent = numeroCasuale
+}
