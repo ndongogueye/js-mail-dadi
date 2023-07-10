@@ -1,29 +1,44 @@
-let emailAutorizzate = ["bayeg203@gmail.com", "bayeg2003@gmail.com"];
 
+const check = document.getElementById("controlla");
 
-let emailInserita = prompt("Inserisci la tua email:");
+check.addEventListener("click", function getEmail()
+{
 
+  let emailInput = document.getElementById("email");
+  let email = emailInput.value;
 
-if (emailAutorizzate.includes(emailInserita)) {
-  console.log("Accesso consentito. Benvenuto!");
-} else {
-  console.log("Spiacenti, non hai accesso autorizzato.");
-}
-
-
-
-function gioca() {
-  var giocatore = Math.floor(Math.random() * 6) + 1;
-  var computer = Math.floor(Math.random() * 6) + 1;
-
-  console.log("Il giocatore ha lanciato il dado e ha ottenuto: " + giocatore);
-  console.log("Il computer ha lanciato il dado e ha ottenuto: " + computer);
-
-  if (giocatore > computer) {
-    console.log("Il giocatore vince!");
-  } else if (computer > giocatore) {
-    console.log("Il computer vince!");
-  } else {
-    console.log("È un pareggio!");
+ 
+  
+  let emailAutorizzate = ["bayeg203@gmail.com", "bayeg2003@gmail.com"];
+  
+  let accessoConsentito = false;
+  
+  for ( i = 0; i < emailAutorizzate.length; i++) {
+    if (email === emailAutorizzate[i]) {
+      accessoConsentito = true;
+  
+    }
   }
+  
+  if (accessoConsentito) {
+    document.getElementById("esito").innerHTML = "Mail valida";
+  } else {
+    document.getElementById("esito").innerHTML = "Mail non valida";
+  }
+
+
 }
+)
+
+
+
+let utente = Math.floor(Math.random() * 6);
+let pc = Math.floor(Math.random() * 6);
+
+
+if (utente > pc) {
+ console.log ("user ha vinto");
+} else if (utente < pc) {
+    console.log ("Il computer ha vinto ");
+} 
+
